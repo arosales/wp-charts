@@ -4,7 +4,7 @@ Helm Charts for Wordpress, MariaDB dependency
 Deployed with Helm3:
 `helm install click ~/devel/chart-dev/charts/wordpress --set ingress.enabled=true`
 
-Deployment post commands:
+## Deployment post commands:
 ```
 NAME: click
 LAST DEPLOYED: Thu Nov 14 00:41:31 2019
@@ -25,3 +25,7 @@ NOTES:
   echo Username: user
   echo Password: $(kubectl get secret --namespace default click-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
   ```
+## Resource needs
+- Needs 2 volumnes
+- Needs 2 LB]
+- DOK8s, nodes tbd
